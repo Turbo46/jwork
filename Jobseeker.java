@@ -6,8 +6,13 @@ public class Jobseeker
     private String password;
     private String joinDate;
     
-    public Jobseeker()
+    public Jobseeker(int id, String name, String email, String password, String joinDate)
     {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
     }
 
     public static int getId()
