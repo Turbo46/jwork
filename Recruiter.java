@@ -1,63 +1,60 @@
 public class Recruiter
 {
-    // instance variables - replace the example below with your own
+    //membuat instance variable untuk class recruiter
     private int id;
     private String name;
     private String email;
     private String phoneNumber;
     private Location location;
     public Recruiter(int id, String name,String email, String phoneNumber,Location location)
-    {
+    { //melakukan define object serta return object untuk masing-masing function
         this.id = id;
         this.name = name;
         this.phoneNumber = email;
         this.location = location;
     }
-
-    public int getId()
+    public int getId() //melakukan define function untuk getter sebuah id
     {
         return this.id;
     }
-    
-        public String getName()
+        public String getName() //define function getter name
     {
         return this.name;
     }
-
-    public String getEmail()
+    public String getEmail() //define function getter email
     {
         return this.email;
     }
-     public String getPhoneNumber()
+     public String getPhoneNumber() //define function getter phone number
     {
         return this.phoneNumber;
     }
-    public Location getLocation()
+    public Location getLocation() //gtter location
     {
         return this.location;
     }
-    public void setid(int id)
+    public void setid(int id) //setter id
     {
         this.id = id;
     }
-    public void setEmail(String Email)
+    public void setEmail(String Email) //setter email
     {
         this.email = email;
     }
-    public void setName(String Name)
+    public void setName(String Name) //setter name
     {
         this.name = name;
     }
-    public void setPhoneNumber(String phoneNumber)
+    public void setPhoneNumber(String phoneNumber) //setter phone number
     {
         this.phoneNumber = phoneNumber;
     }
-    public void setLocation(Location location)
+    public void setLocation(Location location) //setter location
     {
         this.location = location;
     }
-    public void printData()
+    public void printData() //melakukan print data yang didapatkan
     {
-        System.out.println(getName());
+        System.out.println(getName()); //return untuk melakukan print
     }
 }
