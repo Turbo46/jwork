@@ -5,51 +5,60 @@ public class Job
     private String name;
     private int fee;
     private String category;
-
-    public Job()
+    private Recruiter recruiter;
+    public Job(int id,String name,Recruiter recruiter, int fee, String category)
     {
-        // initialise instance variables
+        this.id = id;
+        this.name = name;
+        this.recruiter = recruiter;
+        this.fee = fee;
+        this.category = category;
     }
 
     public int getId()
     {
-        return 0;
+        return this.id;
     }
     
     public String getName()
     {
-        return "oop";
+        return this.name;
     }
-    
     public int getFee()
     {
-        return 0;
+        return this.fee;
     }
-    
     public String getCategory()
     {
-        return "oop";
+        return this.category;
     }
-    
+    public Recruiter getRecruiter()
+    {
+        return this.recruiter;
+    }
     public void setId(int id)
     {
-       
+         this.id = id;      
     }
-    
     public void setName(String name)
     {
-       
+         this.name = name;  
     }
-    
+    public void setRecruiter(Recruiter recruiter)
+    {
+        this.recruiter = recruiter;
+    }
     public void setFee(int fee)
     {
-       
+         this.fee = fee;  
     }
     
     public void setCategory(String category)
     {
-        
+        this.category = category;
     }
-    
-    
+    public void printData()
+    {
+        System.out.println(getName());
+    }
 }
