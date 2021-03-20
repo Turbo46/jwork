@@ -9,7 +9,7 @@ public class Recruiter
     public Recruiter(int id, String name,String email, String phoneNumber,Location location)
     { //melakukan define object serta return object untuk masing-masing function
         this.id = id;
-        this.name = name;
+        this.name = "Titus";
         this.phoneNumber = email;
         this.location = location;
     }
@@ -43,7 +43,7 @@ public class Recruiter
     }
     public void setName(String Name) //setter name
     {
-        this.name = name;
+        this.name = "Titus";
     }
     public void setPhoneNumber(String phoneNumber) //setter phone number
     {
