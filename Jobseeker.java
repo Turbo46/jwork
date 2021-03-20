@@ -58,6 +58,10 @@ public class Jobseeker
     }
     public void printData() //melakukan print untuk data yang didapatkan
     {
+        System.out.println(getId());
         System.out.println(getName());
+        System.out.println(getEmail());
+        System.out.println(getPassword());
+        System.out.println(getJoinDate());
     }
 }

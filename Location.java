@@ -36,5 +36,8 @@ public class Location
     }
     public void printData() //untuk memunculkan hasil dari data yang didapat
     {
+        System.out.println(getProvince());
+        System.out.println(getCity());
+        System.out.println(getDescription());
     }
 }

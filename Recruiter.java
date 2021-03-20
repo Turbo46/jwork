@@ -54,7 +54,11 @@ public class Recruiter
         this.location = location;
     }
     public void printData() //melakukan print data yang didapatkan
-    {
-        System.out.println(getName()); //return untuk melakukan print
+    {//return untuk melakukan print
+        System.out.println(getId());
+        System.out.println(getName());
+        System.out.println(getEmail());
+        System.out.println(getPhoneNumber());
+        System.out.println(getLocation());
     }
 }

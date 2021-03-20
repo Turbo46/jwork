@@ -58,6 +58,10 @@ public class Job
     }
     public void printData() //untuk melakukan print/memunculkan hasil dari data yang didapat
     {
+        System.out.println(getId());
         System.out.println(getName());
+        System.out.println(getRecruiter());
+        System.out.println(getFee());
+        System.out.println(getCategory());
     }
 }

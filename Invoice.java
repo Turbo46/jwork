@@ -23,7 +23,7 @@ public class Invoice
         return this.idJob;
     }
     
-    public String getdate() //untuk mendapatkan data dari date
+    public String getDate() //untuk mendapatkan data dari date
     {
         return this.date;
     }
@@ -57,5 +57,10 @@ public class Invoice
     }
     public void printData() //menampilkan data yang telah didapatkan
     {
+        System.out.println(getId());
+        System.out.println(getIdJob());
+        System.out.println(getDate());
+        System.out.println(getTotalFee());
+        System.out.println(getJobseeker());
     }
 }
