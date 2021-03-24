@@ -43,7 +43,7 @@ public class Recruiter
     }
     public void setName(String Name) //setter name
     {
-        this.name = "Titus";
+        this.name = name;
     }
     public void setPhoneNumber(String phoneNumber) //setter phone number
     {
