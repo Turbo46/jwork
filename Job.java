@@ -17,24 +17,24 @@ public class Job
 
     public int getId() //getter id
     {
-        return this.id;
+        return id;
     }
     
     public String getName() //getter name
     {
-        return this.name;
+        return name;
     }
     public int getFee() //getter fee
     {
-        return this.fee;
+        return fee;
     }
     public String getCategory() //getter category
     {
-        return this.category;
+        return category;
     }
     public Recruiter getRecruiter() //getter recruiter
     {
-        return this.recruiter;
+        return recruiter;
     }
     public void setId(int id) //setter id
     {
@@ -58,10 +58,10 @@ public class Job
     }
     public void printData() //untuk melakukan print/memunculkan hasil dari data yang didapat
     {
-        System.out.println(getId());
-        System.out.println(getName());
-        System.out.println(getRecruiter());
-        System.out.println(getFee());
-        System.out.println(getCategory());
+        System.out.println("ID: \n"+ getId());
+        System.out.println("NAME: \n" + getName());
+        System.out.println("RECRUITER: \n" + getRecruiter());
+        System.out.println("FEE: \n" + getFee());
+        System.out.println("RECRUITER: \n" + getCategory());
     }
 }

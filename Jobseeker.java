@@ -18,23 +18,23 @@ public class Jobseeker
 
       public int getId() //getter id
     {
-        return this.id;
+        return id;
     }
     public String getName() //getter name
     {
-        return this.name;
+        return name;
     }
     public String getEmail() //getter email
     {
-        return this.email;
+        return email;
     }
     public String getPassword() //getter password
     {
-        return this.password;
+        return password;
     }
      public String getJoinDate() //getter join date
     {
-        return this.joinDate;
+        return joinDate;
     }
     public void setId(int id) //setter id
     {
@@ -58,10 +58,10 @@ public class Jobseeker
     }
     public void printData() //melakukan print untuk data yang didapatkan
     {
-        System.out.println(getId());
-        System.out.println(getName());
-        System.out.println(getEmail());
-        System.out.println(getPassword());
-        System.out.println(getJoinDate());
+        System.out.println("NAME: \n" + getId());
+        System.out.println("ID: \n" + getName());
+        System.out.println("EMAIL: \n" + getEmail());
+        System.out.println("PASSWORD: \n" + getPassword());
+        System.out.println("JOIN DATE: \n" + getJoinDate());
     }
 }

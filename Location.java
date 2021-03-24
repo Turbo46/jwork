@@ -12,15 +12,15 @@ public class Location
     }
     public String getProvince() //getter province
     {
-        return this.province;
+        return province;
     }
     public String getCity() //getter city
     {
-        return this.city;
+        return city;
     }
     public String getDescription() //getter description
     {
-        return this.description;
+        return description;
     }
     public void setProvince(String province) //setter province
     {
@@ -36,8 +36,8 @@ public class Location
     }
     public void printData() //untuk memunculkan hasil dari data yang didapat
     {
-        System.out.println(getProvince());
-        System.out.println(getCity());
-        System.out.println(getDescription());
+        System.out.println("PROVINCE: \n" + getProvince());
+        System.out.println("CITY: \n" + getCity());
+        System.out.println("DESCRIPTION: \n" + getDescription());
     }
 }

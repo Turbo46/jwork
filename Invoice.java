@@ -16,24 +16,24 @@ public class Invoice
     }
     public int getId() //untuk menedapatkan data id
     {
-        return this.id;
+        return id;
     }
     public int getIdJob() //untuk mendapatkan data id job
     {
-        return this.idJob;
+        return idJob;
     }
     
     public String getDate() //untuk mendapatkan data dari date
     {
-        return this.date;
+        return date;
     }
     public int getTotalFee() //untuk mendapatkan data total fee
     {
-        return this.totalFee;
+        return totalFee;
     }
     public Jobseeker getJobseeker() //untuk mendapatkan data jobseeker
     {
-        return this.jobseeker;
+        return jobseeker;
     }
     public void setId(int id) //untuk menetapkan isi dari instance id
     {
@@ -57,10 +57,10 @@ public class Invoice
     }
     public void printData() //menampilkan data yang telah didapatkan
     {
-        System.out.println(getId());
-        System.out.println(getIdJob());
-        System.out.println(getDate());
-        System.out.println(getTotalFee());
-        System.out.println(getJobseeker());
+        System.out.println("ID: \n" + getId());
+        System.out.println("ID JOB: \n" + getIdJob());
+        System.out.println("DATE: \n" + getDate());
+        System.out.println("TOTAL FEE: \n" + getTotalFee());
+        System.out.println("JOB SEEKER: \n"+ getJobseeker());
     }
 }

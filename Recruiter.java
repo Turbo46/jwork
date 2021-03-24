@@ -9,29 +9,29 @@ public class Recruiter
     public Recruiter(int id, String name,String email, String phoneNumber,Location location)
     { //melakukan define object serta return object untuk masing-masing function
         this.id = id;
-        this.name = "Titus";
+        this.name = name;
         this.phoneNumber = email;
         this.location = location;
     }
     public int getId() //melakukan define function untuk getter sebuah id
     {
-        return this.id;
+        return id;
     }
         public String getName() //define function getter name
     {
-        return this.name;
+        return name;
     }
     public String getEmail() //define function getter email
     {
-        return this.email;
+        return email;
     }
      public String getPhoneNumber() //define function getter phone number
     {
-        return this.phoneNumber;
+        return phoneNumber;
     }
     public Location getLocation() //gtter location
     {
-        return this.location;
+        return location;
     }
     public void setid(int id) //setter id
     {
@@ -55,10 +55,10 @@ public class Recruiter
     }
     public void printData() //melakukan print data yang didapatkan
     {//return untuk melakukan print
-        System.out.println(getId());
-        System.out.println(getName());
-        System.out.println(getEmail());
-        System.out.println(getPhoneNumber());
-        System.out.println(getLocation());
+        System.out.println("NAME: \n" + getId());
+        System.out.println("ID: \n" + getName());
+        System.out.println("EMAIL: \n" + getEmail());
+        System.out.println("PHONE NUM: \n" + getPhoneNumber());
+        System.out.println("LOCATION: \n" + getLocation());
     }
 }
