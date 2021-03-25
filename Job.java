@@ -4,9 +4,9 @@ public class Job
     private int id;
     private String name;
     private int fee;
-    private String category;
+    private JobCategory category;
     private Recruiter recruiter;
-    public Job(int id,String name,Recruiter recruiter, int fee, String category)
+    public Job(int id,String name,Recruiter recruiter, int fee, JobCategory category)
     { //melakukan define object serta return object untuk masing-masing function
         this.id = id;
         this.name = name;
@@ -28,7 +28,7 @@ public class Job
     {
         return fee;
     }
-    public String getCategory() //getter category
+    public JobCategory getCategory() //getter category
     {
         return category;
     }
@@ -52,12 +52,13 @@ public class Job
     {
          this.fee = fee;  
     }
-    public void setCategory(String category) //setter category
+    public void setCategory(JobCategory category) //setter category
     {
         this.category = category;
     }
     public void printData() //untuk melakukan print/memunculkan hasil dari data yang didapat
     {
+        System.out.println("=========JOB==========");
         System.out.println("ID: \n"+ getId());
         System.out.println("NAME: \n" + getName());
         System.out.println("RECRUITER: \n" + getRecruiter());
