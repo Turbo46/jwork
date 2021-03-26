@@ -9,17 +9,10 @@ public enum JobCategory
     DataScientist("Data Scientist"),
     DataAnalyst("Data Analyst");
     
-    private final String jobString;
+    private final String category;
     
-    JobCategory(String jobString)
-    {
-        this.jobString = jobString;
-    }
-    
-    @Override
-    public String toString()
-    {
-        return jobString;
+    private JobCategory(String category){
+     this.category = category;   
     }
     
 }

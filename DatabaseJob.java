@@ -2,9 +2,6 @@ public class DatabaseJob
 {
     // melakukan define instance class database job
     private static String[] listJob;
-    public DatabaseJob() //membuat function database job
-    {
-    }
     public static boolean addJob(Job job) //untuk melakukan function boolean dari add job
     {
         return false; //return false untuk mengembalikan functionnya jika dalam keadaan parameter boolean

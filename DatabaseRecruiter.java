@@ -2,12 +2,7 @@ public class DatabaseRecruiter
 {
     // instance variable Database Recruiter
     private static String[] listRecruiter;
-
     
-    public DatabaseRecruiter()
-    {
-
-    }
     public static boolean addRecruiter(Recruiter recruiter)
     {
         return false;

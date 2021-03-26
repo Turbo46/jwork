@@ -1,10 +1,6 @@
 public class DatabaseJobseeker
 {
     private static String[] listJobseeker;
-    public DatabaseJobseeker()
-    {
-        this.listJobseeker = listJobseeker;
-    }
     public static boolean addJobseeker(Jobseeker jobseeker)
     {
         return false;
