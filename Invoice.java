@@ -7,8 +7,8 @@ public class Invoice
     private int totalFee;
     private Jobseeker jobseeker;
     private PaymentType paymentType;
-    private InvoiceStatus status;
-    public Invoice(int id,int idJob,String date,int totalFee,Jobseeker jobseeker,int totalPrice, InvoiceStatus status)
+    private  InvoiceStatus invoiceStatus;
+    public Invoice(int id,int idJob,String date,int totalFee,Jobseeker jobseeker,int totalPrice,  InvoiceStatus invoiceStatus)
     { //membuat return dan object yang akan dijalankan sesuai dengan instance yang telah dibuat
         this.id = id;
         this.idJob = idJob;
@@ -16,7 +16,7 @@ public class Invoice
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.paymentType = paymentType;
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
     public int getId() //untuk menedapatkan data id
     {
@@ -45,7 +45,7 @@ public class Invoice
     }
     public InvoiceStatus getInvoiceStatus()
     {
-        return status;
+        return invoiceStatus;
     }
     public void setId(int id) //untuk menetapkan isi dari instance id
     {
@@ -73,7 +73,7 @@ public class Invoice
     }
     public void setInvoiceStatus(InvoiceStatus status)
     {
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
     public void printData() //menampilkan data yang telah didapatkan
     {
@@ -81,6 +81,7 @@ public class Invoice
         System.out.println("ID: \n" + getId());
         System.out.println("ID JOB: \n" + getIdJob());
         System.out.println("DATE: \n" + getDate());
+        System.out.println("STATUS: \n" + getInvoiceStatus());
         System.out.println("TOTAL FEE: \n" + getTotalFee());
         System.out.println("JOB SEEKER: \n"+ getJobseeker());
     }

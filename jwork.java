@@ -26,16 +26,6 @@ public abstract class jwork
      job1.printData(); 
      invoice1.printData();
      
-     System.out.println(category1);
-     System.out.println(category2);
-     System.out.println(category3);
-     System.out.println(category4);
-     System.out.println(category5);
-     System.out.println(category6);
-     System.out.println(category7);
-     System.out.println(category8);
-     System.out.println(status1);
-     System.out.println(status2);
-     System.out.println(status3);
+
     }
 }

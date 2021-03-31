@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Invoice
-comment1.params=id\ idJob\ date\ totalFee\ jobseeker\ totalPrice\ status
+comment1.params=id\ idJob\ date\ totalFee\ jobseeker\ totalPrice\ invoiceStatus
 comment1.target=Invoice(int,\ int,\ java.lang.String,\ int,\ Jobseeker,\ int,\ InvoiceStatus)
 comment10.params=idJobs
 comment10.target=void\ setIdJobs(int)
