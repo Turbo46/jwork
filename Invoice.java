@@ -1,88 +1,61 @@
-public class Invoice
+public abstract class Invoice
 {
-    //Membuat instance variable invoice
+    // Deklarasi beberapa instance variables yang akan digunakan.
+    // Access Modifier variable di set private.
     private int id;
-    private int idJob;
+    private Job job;
     private String date;
-    private int totalFee;
+    protected int totalFee;
     private Jobseeker jobseeker;
+    private InvoiceStatus invoiceStatus;
     private PaymentType paymentType;
-    private  InvoiceStatus invoiceStatus;
-    public Invoice(int id,int idJob,String date,int totalFee,Jobseeker jobseeker,int totalPrice,  InvoiceStatus invoiceStatus)
-    { //membuat return dan object yang akan dijalankan sesuai dengan instance yang telah dibuat
+    
+    public Invoice(int id, Job job, String date, int totalFee, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    {
         this.id = id;
-        this.idJob = idJob;
+        this.job = job;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
-        this.paymentType = paymentType;
         this.invoiceStatus = invoiceStatus;
     }
-    public int getId() //untuk menedapatkan data id
-    {
+    public int getId(){
         return id;
     }
-    public int getIdJob() //untuk mendapatkan data id job
-    {
-        return idJob;
+    public Job getJob(){
+        return job;
     }
-    
-    public String getDate() //untuk mendapatkan data dari date
-    {
+    public String getDate(){
         return date;
     }
-    public int getTotalFee() //untuk mendapatkan data total fee
-    {
+    public int getTotalFee(){
         return totalFee;
     }
-    public Jobseeker getJobseeker() //untuk mendapatkan data jobseeker
-    {
+    public Jobseeker getJobseeker(){
         return jobseeker;
     }
-    public PaymentType getPaymentType()
-    {
-        return paymentType;
-    }
-    public InvoiceStatus getInvoiceStatus()
-    {
+    public abstract PaymentType getPaymentType();
+    public InvoiceStatus getInvoiceStatus(){
         return invoiceStatus;
     }
-    public void setId(int id) //untuk menetapkan isi dari instance id
-    {
-        this.id = id;
+    public void setId(int id){
+        this.id = id;  //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setIdJobs(int idJobs) //untuk menetapkan isi dari id jobs
-    {
-        this.idJob = idJob;
+    public void setJob(Job job){
+        this.job = job; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setDate(String date) //untuk menetapkan tanggal
-    {
-        this.date = date;
+    public void setDate(String date){
+        this.date = date; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setTotalFee(int totalFee) //untuk menetapkan total fee
-    {
-        this.totalFee = totalFee;
+    public abstract void setTotalFee();
+    public void setJobseeker(Jobseeker jobseeker){
+        this.jobseeker = jobseeker; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setJobseeker(Jobseeker jobseeker) //untuk menetapkan data jobseeker
-    {
-        this.jobseeker = jobseeker;
+    public void setPaymentType (PaymentType paymentType){
+        this.paymentType = paymentType; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setPaymentType(PaymentType paymentType)
-    {
-        this.paymentType = paymentType;
+    public void setInvoiceStatus (InvoiceStatus invoiceStatus){
+        this.invoiceStatus = invoiceStatus; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setInvoiceStatus(InvoiceStatus status)
-    {
-        this.invoiceStatus = invoiceStatus;
-    }
-    public void printData() //menampilkan data yang telah didapatkan
-    {
-        System.out.println("=========Invoice==========");
-        System.out.println("ID: \n" + getId());
-        System.out.println("ID JOB: \n" + getIdJob());
-        System.out.println("DATE: \n" + getDate());
-        System.out.println("STATUS: \n" + getInvoiceStatus());
-        System.out.println("TOTAL FEE: \n" + getTotalFee());
-        System.out.println("JOB SEEKER: \n"+ getJobseeker());
-    }
+    public abstract void printData();
 }

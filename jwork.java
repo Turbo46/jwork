@@ -18,14 +18,18 @@ public abstract class jwork
      Recruiter recruiter1 = new Recruiter(1, "Gibu", "gibu@mail.com", "087322170", location1); //menggunakan parameter sesuai object yang ada pada recruiter
      Job job1 = new Job(1, "Gilbert Parluhutan Siagian", recruiter1, 4000000, category1);//menggunakan parameter sesuai object yang ada pada job
      Jobseeker jobseeker1 = new Jobseeker(1, "Gilbert Parluhutan Siagian", "gilbertsiagian1@mail.com", "gibu090719", "20 Maret 2021"); //menggunakan parameter sesuai object yang ada pada jobseeker
-     Invoice invoice1 = new Invoice(1, 1, "20 Maret 2021", 4000000, jobseeker1,4000000,status1); //menggunakan parameter sesuai object yang ada pada invoice
-     
+
      System.out.println(recruiter1.getName());
      recruiter1.setName("Titus");
      System.out.println(recruiter1.getName());
      job1.printData(); 
-     invoice1.printData();
-     
+     Bonus bonus1 = new Bonus (1, "ABCD", 10000, 10000000, true);
+     Bonus bonus2 = new Bonus (1, "DEFG", 1000000, 1, true);
+        
+     EwalletPayment payment1 = new EwalletPayment(1, job1, "3 December 2021", jobseeker1, InvoiceStatus.OnGoing);
+     EwalletPayment payment2 = new EwalletPayment(2, job1, "3 December 2021", jobseeker1, InvoiceStatus.OnGoing, bonus1);
+     EwalletPayment payment3 = new EwalletPayment(3, job1, "3 December 2021", jobseeker1, InvoiceStatus.OnGoing, bonus2);
+ 
 
     }
 }
