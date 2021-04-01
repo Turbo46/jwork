@@ -25,11 +25,31 @@ public abstract class jwork
      job1.printData(); 
      Bonus bonus1 = new Bonus (1, "ABCD", 10000, 10000000, true);
      Bonus bonus2 = new Bonus (1, "DEFG", 1000000, 1, true);
+    
+     EwalletPayment payment1 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing);
+     EwalletPayment payment2 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus1);
+     EwalletPayment payment3 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus2);
+     PaymentType type1 = PaymentType.BankPayment;
+     PaymentType type2 = PaymentType.EwalletPayment;
+     System.out.println(type1);
+     System.out.println(type2);
+     System.out.println(status1);
+     System.out.println(status2);
+     System.out.println(status3);
+     
+     System.out.println("\n");
+     job1.printData();
         
-     EwalletPayment payment1 = new EwalletPayment(1, job1, "3 December 2021", jobseeker1, InvoiceStatus.OnGoing);
-     EwalletPayment payment2 = new EwalletPayment(2, job1, "3 December 2021", jobseeker1, InvoiceStatus.OnGoing, bonus1);
-     EwalletPayment payment3 = new EwalletPayment(3, job1, "3 December 2021", jobseeker1, InvoiceStatus.OnGoing, bonus2);
- 
+        
+     System.out.println("\n");
+        
+                
+     System.out.println("\n");
+     payment1.printData();
+     System.out.println("\n");
+     payment2.printData();
+     System.out.println("\n");
+     payment3.printData();
 
     }
 }

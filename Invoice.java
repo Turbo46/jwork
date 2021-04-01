@@ -10,7 +10,7 @@ public abstract class Invoice
     private InvoiceStatus invoiceStatus;
     private PaymentType paymentType;
     
-    public Invoice(int id, Job job, String date, int totalFee, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         this.id = id;
         this.job = job;
