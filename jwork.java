@@ -36,14 +36,6 @@ public abstract class jwork
      System.out.println(status1);
      System.out.println(status2);
      System.out.println(status3);
-     
-     System.out.println("\n");
-     job1.printData();
-        
-        
-     System.out.println("\n");
-        
-                
      System.out.println("\n");
      payment1.printData();
      System.out.println("\n");
