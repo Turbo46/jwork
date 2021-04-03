@@ -25,7 +25,7 @@ public abstract class jwork
      job1.printData(); 
      Bonus bonus1 = new Bonus (1, "ABCD", 10000, 10000000, true);
      Bonus bonus2 = new Bonus (1, "DEFG", 1000000, 1, true);
-    
+
      EwalletPayment payment1 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing);
      EwalletPayment payment2 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus1);
      EwalletPayment payment3 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus2);
@@ -42,6 +42,10 @@ public abstract class jwork
      payment2.printData();
      System.out.println("\n");
      payment3.printData();
+     BankPayment bp1 = new BankPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.Finished);
+     BankPayment bp2 = new BankPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.Finished, 500000);
+     bp1.printData();
+     bp2.printData();
 
     }
 }
