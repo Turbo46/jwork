@@ -1,6 +1,6 @@
 public class EwalletPayment extends Invoice
 {
-     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
+    private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
     
     public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus){
