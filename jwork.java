@@ -1,3 +1,5 @@
+import java.util.GregorianCalendar;
+
 //Class ini digunakan sebagai main function dari program
 public abstract class jwork
 {
@@ -17,15 +19,18 @@ public abstract class jwork
      Location location1 = new Location ("Bali", "Singaraja","Buleleng"); //menggunakan parameter sesuai object yang ada pada location
      Recruiter recruiter1 = new Recruiter(1, "Gibu", "gibu@mail.com", "087322170", location1); //menggunakan parameter sesuai object yang ada pada recruiter
      Job job1 = new Job(1, "Gilbert Parluhutan Siagian", recruiter1, 4000000, category1);//menggunakan parameter sesuai object yang ada pada job
-     Jobseeker jobseeker1 = new Jobseeker(1, "Gilbert Parluhutan Siagian", "gilbertsiagian1@mail.com", "gibu090719", "20 Maret 2021"); //menggunakan parameter sesuai object yang ada pada jobseeker
-
+     
      System.out.println(recruiter1.getName());
      recruiter1.setName("Titus");
      System.out.println(recruiter1.getName());
-     job1.printData(); 
      Bonus bonus1 = new Bonus (1, "ABCD", 10000, 10000000, true);
      Bonus bonus2 = new Bonus (1, "DEFG", 1000000, 1, true);
-
+     Jobseeker jobseeker1 = new Jobseeker(1, "Gilbert", "..gilbert.siagian@ui.ac.id", "gilbert", new GregorianCalendar(1999, 8, 16));
+     Jobseeker jobseeker2 = new Jobseeker(2, "Gilbert", "gilbert.siagian@ui.ac.id", "Gibu090719", 2021, 04, 8);
+     Jobseeker jobseeker3 = new Jobseeker(3, "Gilbert", "gilbert.siagian@ui.ac.id", "Gibu090719");
+     System.out.println(jobseeker1);
+     System.out.println(jobseeker2);
+     System.out.println(jobseeker3);
      EwalletPayment payment1 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing);
      EwalletPayment payment2 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus1);
      EwalletPayment payment3 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus2);

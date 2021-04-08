@@ -1,3 +1,7 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.regex.*;
+
 public class Jobseeker
 {
     //membuat instance variable untuk class jobseeker
@@ -5,17 +9,30 @@ public class Jobseeker
     private String name;
     private String email;
     private String password;
-    private String joinDate;
-    
-    public Jobseeker(int id, String name, String email, String password, String joinDate)
-    { //melakukan define object serta return object untuk masing-masing function
-        this.id = id;
-        this.name = name;
+    private Calendar joinDate;
+    public Jobseeker(int id, String name, String email, String password, Calendar joinDate)
+    {
+        this.id = id; 
+        this.name = name; 
         this.email = email;
-        this.password = password;
-        this.joinDate = joinDate;
+        this.password = password; 
+        this.joinDate = joinDate; 
     }
-
+    public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth)
+    {
+        this.id = id; 
+        this.name = name; 
+        this.email = email; 
+        this.password = password; 
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    }
+    public Jobseeker(int id, String name, String email, String password)
+    {
+        this.id = id; 
+        this.name = name; 
+        this.email = email; 
+        this.password = password; 
+    }
       public int getId() //getter id
     {
         return id;
@@ -32,7 +49,7 @@ public class Jobseeker
     {
         return password;
     }
-     public String getJoinDate() //getter join date
+     public Calendar getJoinDate() //getter join date
     {
         return joinDate;
     }
@@ -44,24 +61,34 @@ public class Jobseeker
     {
         this.name = name;
     }
-    public void setEmail(String email) //setter email
-    {
-        this.email = email;
+    public void setEmail(String email, String Regex){
+        String regex = "^[a-zA-Z0-9_!#$%&'*+/=?{|}~^-]+(?:\\.[a-zA-Z0-9_!#$%&'*+/=?{|}~^-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
+        matcher.matches();
+        if (matcher.matches() == false)
+            email = null;
+        else
+            this.email = email;
     }
-    public void setPassword(String password) //setter password
-    {
-        this.password = password;
+    public void setPassword(String password){
+        String regexP = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(.{6}$";
+        Pattern pattern = Pattern.compile(regexP);
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.matches() == false)
+            email = null;
+        else
+            this.password = password;
     }
-    public void setJoinDate(String joinDate) //setter join date
+    public void setJoinDate(Calendar joinDate) //setter join date
     {
         this.joinDate = joinDate;
     }
-    public void printData() //melakukan print untuk data yang didapatkan
+    public void setJoinDate(int year, int month, int dayOfMonth)
     {
-        System.out.println("NAME: \n" + getId());
-        System.out.println("ID: \n" + getName());
-        System.out.println("EMAIL: \n" + getEmail());
-        System.out.println("PASSWORD: \n" + getPassword());
-        System.out.println("JOIN DATE: \n" + getJoinDate());
+     this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+    }
+      public String toString(){
+              return "ID= "+id+"\nNama= "+name+"\nEmail= "+email+"\nPassword= "+password+"\nJoin Date= "+joinDate+"\n";
     }
 }

@@ -34,10 +34,7 @@ public class Location
     {
         this.description = description;
     }
-    public void printData() //untuk memunculkan hasil dari data yang didapat
-    {
-        System.out.println("PROVINCE: \n" + getProvince());
-        System.out.println("CITY: \n" + getCity());
-        System.out.println("DESCRIPTION: \n" + getDescription());
+    public String toString(){
+              return "Province= "+province+"\nCity= "+city+"\nDescription= "+description+"\n";
     }
 }

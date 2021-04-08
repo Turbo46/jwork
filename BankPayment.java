@@ -37,7 +37,6 @@ public class BankPayment extends Invoice
             super.totalFee = getJob().getFee();
         }
     }
-    
     @Override
     public void printData(){
         System.out.println("===================== INVOICE =====================");

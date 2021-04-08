@@ -54,7 +54,7 @@ public class Bonus
     {
         this.active = active;
     }
-    public void printData()
-    {
+    public String toString(){
+              return "ID= "+id+"\nRef.Code= "+referralCode+"\nEx.Fee= "+extraFee+"\nMin.Fee= "+minTotalFee+"\nActive= "+active+"\n";
     }
 }

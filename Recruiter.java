@@ -53,12 +53,7 @@ public class Recruiter
     {
         this.location = location;
     }
-    public void printData() //melakukan print data yang didapatkan
-    {//return untuk melakukan print
-        System.out.println("NAME: \n" + getId());
-        System.out.println("ID: \n" + getName());
-        System.out.println("EMAIL: \n" + getEmail());
-        System.out.println("PHONE NUM: \n" + getPhoneNumber());
-        System.out.println("LOCATION: \n" + getLocation());
+    public String toString(){
+              return "ID= "+id+"\nNama= "+name+"\nEmail= "+email+"\nPhoneNum= "+phoneNumber+"\nLocation= "+location+"\n";
     }
 }

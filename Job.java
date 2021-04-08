@@ -56,13 +56,7 @@ public class Job
     {
         this.category = category;
     }
-    public void printData() //untuk melakukan print/memunculkan hasil dari data yang didapat
-    {
-        System.out.println("=========JOB==========");
-        System.out.println("ID: \n"+ getId());
-        System.out.println("NAME: \n" + getName());
-        System.out.println("RECRUITER: \n" + getRecruiter());
-        System.out.println("FEE: \n" + getFee());
-        System.out.println("RECRUITER: \n" + getCategory());
+    public String toString(){
+              return "ID= "+id+"\nNama= "+name+"\nRecruiter= "+recruiter+"\nCity="+recruiter.getLocation().getCity()+"\nFee= "+fee+"\nJob Category= "+category+"\n";
     }
 }
