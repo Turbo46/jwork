@@ -1,7 +1,8 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
-
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 public abstract class Invoice
 {
     // Deklarasi beberapa instance variables yang akan digunakan.
@@ -22,6 +23,7 @@ public abstract class Invoice
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
     }
     public int getId(){
         return id;
@@ -65,9 +67,13 @@ public abstract class Invoice
         this.invoiceStatus = invoiceStatus; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
     @Override
-    public String toString(){
-        SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
-        String date = formattedDate.format(getDate().getTime());
-            return "Id = " + getId() + "\nNama = " + getName()  + "\nPassword = " + getPassword() + "\nDate = " + date;
-}
+    public String toString() {
+    if (this.date == null) {
+            return "Id = " + getId() + "\nJob = " + getJob() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+        } else {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+            String date = formattedDate.format(getDate().getTime());
+            return "Id = " + getId() + "\nJob = " + getJob() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+        }
+    }
 }

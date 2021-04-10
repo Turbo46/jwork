@@ -33,9 +33,22 @@ public abstract class jwork
      jobseeker1.setPassword("Gibu090719"); 
      System.out.println("\n");
      System.out.println(jobseeker1);
-     EwalletPayment payment1 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing);
-     EwalletPayment payment2 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus1);
-     EwalletPayment payment3 = new EwalletPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.OnGoing, bonus2);
+     EwalletPayment invoice1 = new EwalletPayment(10, job1, jobseeker1, InvoiceStatus.OnGoing);
+     EwalletPayment invoice2 = new EwalletPayment(10, job1, jobseeker2, InvoiceStatus.OnGoing, bonus1);
+     EwalletPayment invoice3 = new EwalletPayment(10, job1, jobseeker3, InvoiceStatus.OnGoing, bonus2);
+     BankPayment invoice4 = new BankPayment(10, job1, jobseeker1, InvoiceStatus.Finished);
+     BankPayment invoice5 = new BankPayment(10, job1, jobseeker1, InvoiceStatus.Finished, 500000);
+     invoice1.setTotalFee();
+     invoice2.setTotalFee();
+     invoice3.setTotalFee();
+     invoice4.setTotalFee();
+     invoice5.setTotalFee();
+     System.out.println(invoice1.toString());
+     System.out.println(invoice2.toString());
+     System.out.println(invoice3.toString());
+     System.out.println(invoice4.toString());
+     System.out.println(invoice5.toString());
+     
      PaymentType type1 = PaymentType.BankPayment;
      PaymentType type2 = PaymentType.EwalletPayment;
      System.out.println(type1);
@@ -44,14 +57,5 @@ public abstract class jwork
      System.out.println(status2);
      System.out.println(status3);
      System.out.println("\n");
-     payment1.printData();
-     System.out.println("\n");
-     payment2.printData();
-     System.out.println("\n");
-     payment3.printData();
-     BankPayment bp1 = new BankPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.Finished);
-     BankPayment bp2 = new BankPayment(10, job1, "1 April 2021", jobseeker1, InvoiceStatus.Finished, 500000);
-     bp1.printData();
-     bp2.printData();
     }
 }
