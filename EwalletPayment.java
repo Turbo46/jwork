@@ -36,7 +36,7 @@ public class EwalletPayment extends Invoice
     }
     
     @Override
-    public void printData(){
+    public String toString(){
         System.out.println("===================== INVOICE =====================");
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());

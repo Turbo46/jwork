@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 public class BankPayment extends Invoice
 {
     // instance variables
@@ -38,12 +40,14 @@ public class BankPayment extends Invoice
         }
     }
     @Override
-    public void printData(){
+    public String toString(){
         System.out.println("===================== INVOICE =====================");
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());
         System.out.println("Date: " + getDate());
         System.out.println("Job Seeker: " + getJobseeker().getName());
+        SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = formattedDate.format(Invoice.getDate().getTime());
         System.out.println("Admin Fee: " + getAdminFee());
         setTotalFee();
         System.out.println("Total Fee: " + getTotalFee());

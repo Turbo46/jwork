@@ -1,16 +1,20 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.text.SimpleDateFormat;
+
 public abstract class Invoice
 {
     // Deklarasi beberapa instance variables yang akan digunakan.
     // Access Modifier variable di set private.
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
     private PaymentType paymentType;
     
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
     {
         this.id = id;
         this.job = job;
@@ -25,7 +29,7 @@ public abstract class Invoice
     public Job getJob(){
         return job;
     }
-    public String getDate(){
+    public Calendar getDate(){
         return date;
     }
     public int getTotalFee(){
@@ -44,8 +48,11 @@ public abstract class Invoice
     public void setJob(Job job){
         this.job = job; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setDate(String date){
+    public void setDate(Calendar date){
         this.date = date; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    }
+    public void setDate(int year, int month, int dayOfMonth){
+        this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
     public abstract void setTotalFee();
     public void setJobseeker(Jobseeker jobseeker){
@@ -57,5 +64,10 @@ public abstract class Invoice
     public void setInvoiceStatus (InvoiceStatus invoiceStatus){
         this.invoiceStatus = invoiceStatus; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public abstract void printData();
+    @Override
+    public String toString(){
+        SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = formattedDate.format(getDate().getTime());
+            return "Id = " + getId() + "\nNama = " + getName()  + "\nPassword = " + getPassword() + "\nDate = " + date;
+}
 }
