@@ -1,25 +1,25 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+
 public abstract class Invoice
 {
     // Deklarasi beberapa instance variables yang akan digunakan.
     // Access Modifier variable di set private.
     private int id;
-    private Job job;
+    private ArrayList<Job> jobs;
     private Calendar date;
     protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
     private PaymentType paymentType;
     
-    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus)
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker)
     {
         this.id = id;
-        this.job = job;
         this.date = date;
+        this.jobs = jobs;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
@@ -28,9 +28,7 @@ public abstract class Invoice
     public int getId(){
         return id;
     }
-    public Job getJob(){
-        return job;
-    }
+    public ArrayList<Job> getJobs(){return jobs; }
     public Calendar getDate(){
         return date;
     }
@@ -47,8 +45,8 @@ public abstract class Invoice
     public void setId(int id){
         this.id = id;  //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
     }
-    public void setJob(Job job){
-        this.job = job; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
+    public void setJobs(ArrayList<Job> jobs){
+        this.jobs = jobs; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.}
     }
     public void setDate(Calendar date){
         this.date = date; //Digunakan lagi keyword 'this', karena nama parameter pada method sama dengan nama pada instance variable class.
@@ -69,11 +67,11 @@ public abstract class Invoice
     @Override
     public String toString() {
     if (this.date == null) {
-            return "Id = " + getId() + "\nJob = " + getJob() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+            return "Id = " + getId() + "\nJob = " + getJobs() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
         } else {
             SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
             String date = formattedDate.format(getDate().getTime());
-            return "Id = " + getId() + "\nJob = " + getJob() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
+            return "Id = " + getId() + "\nJob = " + getJobs() + "\nJobseeker = " + getJobseeker() + "\nInvoice Status= "+ getInvoiceStatus();
         }
     }
 }

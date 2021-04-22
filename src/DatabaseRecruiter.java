@@ -1,22 +1,52 @@
+import java.util.ArrayList;
+
 public class DatabaseRecruiter
 {
-    // instance variable Database Recruiter
-    private static String[] listRecruiter;
-    
+    private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
+    private static int lastId = 0;
+
+    public static ArrayList<Recruiter> getRecruiterDatabase()
+    {
+        return RECRUITER_DATABASE;
+    }
+
+    public static int getLastId()
+    {
+        return lastId;
+    }
+
+    public static Recruiter getRecruiterById(int id){
+        Recruiter tempVar = null;
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
+            if (id == recruiter.getId()){
+                tempVar = recruiter;
+            }
+            else{
+                tempVar =  null;
+            }
+        }
+        return tempVar;
+    }
+
     public static boolean addRecruiter(Recruiter recruiter)
     {
-        return false;
+        RECRUITER_DATABASE.add(recruiter);
+        lastId = recruiter.getId();
+        return true;
     }
-    public static boolean removeRecruiter(Recruiter recruiter)
+
+    public static boolean removeRecruiter(int id)
     {
-        return false;
-    }
-    public static Recruiter getRecruiter()
-    {
-        return null;
-    }
-    public static String[] getListRecruiter()
-    {
-        return listRecruiter;
+        boolean tempBool = true;
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
+            if (id == recruiter.getId()){
+                RECRUITER_DATABASE.remove(id);
+                tempBool = true;
+            }
+            else{
+                tempBool = false;
+            }
+        }
+        return tempBool;
     }
 }
