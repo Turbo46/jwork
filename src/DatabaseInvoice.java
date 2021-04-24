@@ -1,52 +1,61 @@
 import java.util.ArrayList;
 
 public class DatabaseInvoice {
-    private static ArrayList<Jobseeker> INVOICE_DATABASE = new ArrayList<Invoice>();
-    private static int lastId = 0;
+    private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
+    private static int lastId;
 
-    public static ArrayList<Invoice> getDatabaseInvoice() {
+    public static ArrayList<Invoice> getInvoiceDatabase(){
         return INVOICE_DATABASE;
     }
 
-    public static int getLastId() {
+    public static int getLastId(){
         return lastId;
     }
 
-    public static Invoice getInvoiceById(int id) {
-        Invoice temp = null;
-        for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
-            if (id == INVOICE_DATABASE.get(i).getId()) {
-                temp = INVOICE_DATABASE.get(i);
+    public static Invoice getInvoiceById(int id){
+        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
+            if(INVOICE_DATABASE.get(i).getId()== id){
+                return INVOICE_DATABASE.get(i);
             }
         }
-        return temp;
+        return null;
     }
-    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId) {
-            ArrayList<Invoice> temp = new ArrayList<Invoice>();
-            for (Invoice invoice : INVOICE_DATABASE) {
-                if (jobseekerId == invoice.getJobseeker().getId()) {
-                    temp.add(invoice);
-                } else {
-                    return null;
-                }
+
+    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
+        ArrayList<Invoice> temp = new ArrayList<>();
+        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
+            if(INVOICE_DATABASE.get(i).getJobseeker().getId() == jobseekerId){
+                temp.add(INVOICE_DATABASE.get(i));
+                return temp;
             }
-            return temp;
         }
+        return null;
     }
-    public static boolean addInvoice(Invoice invoice) {
+
+    public static boolean addInvoice(Invoice invoice){
         INVOICE_DATABASE.add(invoice);
         lastId = invoice.getId();
         return true;
+    }
 
-        }
-    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus)
-    {
-        for (Invoice invoice : INVOICE_DATABASE) {
-            if (invoice.getInvoiceStatus() == InvoiceStatus.OnGoing) {
-                invoice.setInvoiceStatus(invoiceStatus);
+    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
+        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
+            if(INVOICE_DATABASE.get(i).getId() == id) {
+                INVOICE_DATABASE.get(i).setInvoiceStatus(invoiceStatus);
                 return true;
             }
         }
         return false;
     }
+
+    public static boolean removeInvoice(int id){
+        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
+            if(INVOICE_DATABASE.get(i).getId() == id) {
+                INVOICE_DATABASE.remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

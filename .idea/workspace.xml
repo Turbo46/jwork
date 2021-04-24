@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="492d5ddb-8ab5-453c-bf03-86ba3008f1aa" name="Default Changelist" comment="Modul 6 -Case Study -Array List">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="492d5ddb-8ab5-453c-bf03-86ba3008f1aa" name="Default Changelist" comment="Modul 6 -Post Test -Array List">
+      <change beforePath="$PROJECT_DIR$/src/DatabaseInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseInvoice.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619087323605</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Modul 6 -Post Test -Array List">
+      <created>1619231129727</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619231129727</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +93,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modul 6 -Pre-CS" />
     <MESSAGE value="Modul 6 -Case Study -Array List" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modul 6 -Case Study -Array List" />
+    <MESSAGE value="Modul 6 -Post Test -Array List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modul 6 -Post Test -Array List" />
   </component>
 </project>
