@@ -1,12 +1,16 @@
-public class ReferralCodeAlreadyExistsException extends Exception {
+public class ReferralCodeAlreadyExistsException extends Exception{
     private Bonus referral_error;
 
-    public ReferralCodeAlreadyExistsException(Bonus referral_input) {
+    public ReferralCodeAlreadyExistsException(Bonus referral_input)
+    {
         super("Referral Code: ");
-        referral_error = referral_input;
+        this.referral_error = referral_input;
     }
 
-    public String getMessage() {
-        return super.getMessage() + referral_error + "Not Found";
+    @Override
+    public String getMessage()
+    {
+        return super.getMessage() + referral_error.getReferralCode() + " Already Exists.";
     }
+
 }

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="492d5ddb-8ab5-453c-bf03-86ba3008f1aa" name="Default Changelist" comment="Modul 6 -Post Test -Array List">
+    <list default="true" id="492d5ddb-8ab5-453c-bf03-86ba3008f1aa" name="Default Changelist" comment="Modul 7 -Case Study -Exception">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseBonus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJobseeker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRecruiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EmailAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EmailAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReferralCodeAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReferralCodeAlreadyExistsException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619231235279</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modul 7 -Case Study -Exception">
+      <created>1620290927747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620290927747</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +114,7 @@
     <MESSAGE value="Modul 6 -Pre-CS" />
     <MESSAGE value="Modul 6 -Case Study -Array List" />
     <MESSAGE value="Modul 6 -Post Test -Array List" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modul 6 -Post Test -Array List" />
+    <MESSAGE value="Modul 7 -Case Study -Exception" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modul 7 -Case Study -Exception" />
   </component>
 </project>
