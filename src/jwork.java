@@ -1,23 +1,67 @@
 import java.util.GregorianCalendar;
-
 //Class ini digunakan sebagai main function dari program
-public abstract class jwork
-{
-    public static void main (String[] args) //menggunakan define object dari location,recruiter,jon,jobseeker,dan invoice agar bisa berjalan
+public abstract class jwork {
+    public static void main(String[] args) //menggunakan define object dari location,recruiter,jon,jobseeker,dan invoice agar bisa berjalan
     {
-     Location location1 = new Location("Banten", "Tangerang Selatan", "Tempat Tinggal");
-     DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Gilbert", "gilbertsiagian1@gmail.com", "085212511332", location1));
-     DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Gilbert", "gilbert@ui.ac.id", "Gimi123", 2021, 04, 23));
-     DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Gilbert", "gilbert@ui.ac.id", "Gimi123", 2021, 04, 24));
-     DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Titus", "Titus@ui.ac.id", "Titus123", 2021, 04, 22));
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Gilbert Siagian",
+                    "gilbertsiagian@ui.ac.id", "Gibu16", 2021, 05, 06));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Gilbert",
+                    "gilbert@ui.ac.id", "Gibu23", 2021, 05, 06));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Titus",
+                    "Titus@ui.ac.id", "TitusZarek123", 2021, 05, 06));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Gibu",
+                    "Gibu@ui.ac.id", "gibs23", 2021, 05, 06));
+        } catch (EmailAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
 
-     System.out.println("\n=====================Jobseeker Database====================\n");
-     System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
-     DatabaseJob.addJob(new Job(1, "Backend Engineer GoJek", DatabaseRecruiter.getRecruiterById(1), 30000, JobCategory.BackEnd));
-     DatabaseJob.addJob(new Job(1, "Data Analyst Grab", DatabaseRecruiter.getRecruiterById(1), 200000, JobCategory.DataAnalyst));
-     DatabaseJob.addJob(new Job(1, "Data Scientist Alibaba", DatabaseRecruiter.getRecruiterById(1), 40000, JobCategory.DataScientist));
+        try {
+            DatabaseBonus.addBonus(new Bonus(101, "BreathItIn", 200000, 500000, false));
+        } catch (ReferralCodeAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseBonus.addBonus(new Bonus(101, "BreathItIn", 200000, 500000, true));
+        } catch (ReferralCodeAlreadyExistsException e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("=========Database JobSeeker============");
+        System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
 
-     System.out.println("\n=====================Job Database By Category====================\n");
-     System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
+        System.out.println("=========Database Bonus===============");
+        System.out.println(DatabaseBonus.getBonusDatabase());
+        try {
+            DatabaseJobseeker.removeJobseeker(24);
+        } catch (JobSeekerNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseRecruiter.removeRecruiter(23);
+        } catch (RecruiterNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseJob.getJobById(20);
+        } catch (JobNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            DatabaseBonus.getBonusById(21);
+        } catch (BonusNotFoundException bonusNotFound) {
+            System.out.println(bonusNotFound.getMessage());
+        }
     }
 }
