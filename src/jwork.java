@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 //Class ini digunakan sebagai main function dari program
 public abstract class jwork {
-    ArrayList<Job> myJob = new ArrayList<Job>();
-    ArrayList<Job> myJob1 = new ArrayList<Job>();
+
     public static void main(String[] args) //menggunakan define object dari location,recruiter,jon,jobseeker,dan invoice agar bisa berjalan
     {
-
+        ArrayList<Job> myJob = new ArrayList<Job>();
+        ArrayList<Job> myJob1 = new ArrayList<Job>();
         try {
             DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Gilbert Siagian",
                     "gilbertsiagian@ui.ac.id", "Gibu16", 2021, 05, 06));
@@ -67,32 +67,32 @@ public abstract class jwork {
         } catch (BonusNotFoundException bonusNotFound) {
             System.out.println(bonusNotFound.getMessage());
         }
-    }
-    try {
-        myJob.add(new Job(1, "Backend Engineer", DatabaseRecruiter.getRecruiterById(1), 1000, JobCategory.BackEnd));
-    }
+        try {
+            myJob.add(new Job(1, "Backend Engineer", DatabaseRecruiter.getRecruiterById(1), 1000, JobCategory.BackEnd));
+        }
         catch (RecruiterNotFoundException e) {
-        e.printStackTrace();
-    }
+            e.printStackTrace();
+        }
         try {
-        myJob1.add(new Job(2, "Frontend Engineer", DatabaseRecruiter.getRecruiterById(1), 1000, JobCategory.FrontEnd));
-    }
+            myJob1.add(new Job(2, "Frontend Engineer", DatabaseRecruiter.getRecruiterById(1), 1000, JobCategory.FrontEnd));
+        }
         catch (RecruiterNotFoundException e) {
-        e.printStackTrace();
-    }
+            e.printStackTrace();
+        }
         try {
-        DatabaseInvoice.addInvoice(new EwalletPayment(1, myJob, DatabaseJobseeker.getJobseekerById(1)));
-    }
+            DatabaseInvoice.addInvoice(new EwalletPayment(1, myJob, DatabaseJobseeker.getJobseekerById(1)));
+        }
         catch (JobSeekerNotFoundException e) {
-        e.printStackTrace();
-    }
+            e.printStackTrace();
+        }
         try {
-        DatabaseInvoice.addInvoice(new EwalletPayment(2, myJob1, DatabaseJobseeker.getJobseekerById(2)));
-    }
+            DatabaseInvoice.addInvoice(new EwalletPayment(2, myJob1, DatabaseJobseeker.getJobseekerById(2)));
+        }
         catch (JobSeekerNotFoundException e) {
-        e.printStackTrace();
-    }
+            e.printStackTrace();
+        }
         for (Invoice invoice: DatabaseInvoice.getInvoiceDatabase()){
-        new Thread(new FeeCalculator(invoice)).start();
+            new Thread(new FeeCalculator(invoice).start());
+        }
     }
 }

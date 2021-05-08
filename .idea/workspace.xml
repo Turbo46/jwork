@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="492d5ddb-8ab5-453c-bf03-86ba3008f1aa" name="Default Changelist" comment="Modul 7 -Case Study -Exception">
+    <list default="true" id="492d5ddb-8ab5-453c-bf03-86ba3008f1aa" name="Default Changelist" comment="Modul 7 -Case Study -Revisi Program">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Jwork/jwork.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jwork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620296991474</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Modul 7 -Case Study -Revisi Program">
+      <created>1620433771723</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620433771723</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +154,7 @@
     <MESSAGE value="Modul 6 -Case Study -Array List" />
     <MESSAGE value="Modul 6 -Post Test -Array List" />
     <MESSAGE value="Modul 7 -Case Study -Exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modul 7 -Case Study -Exception" />
+    <MESSAGE value="Modul 7 -Case Study -Revisi Program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modul 7 -Case Study -Revisi Program" />
   </component>
 </project>
