@@ -69,30 +69,26 @@ public abstract class jwork {
         }
         try {
             myJob.add(new Job(1, "Backend Engineer", DatabaseRecruiter.getRecruiterById(1), 1000, JobCategory.BackEnd));
-        }
-        catch (RecruiterNotFoundException e) {
+        } catch (RecruiterNotFoundException e) {
             e.printStackTrace();
         }
         try {
             myJob1.add(new Job(2, "Frontend Engineer", DatabaseRecruiter.getRecruiterById(1), 1000, JobCategory.FrontEnd));
-        }
-        catch (RecruiterNotFoundException e) {
+        } catch (RecruiterNotFoundException e) {
             e.printStackTrace();
         }
         try {
             DatabaseInvoice.addInvoice(new EwalletPayment(1, myJob, DatabaseJobseeker.getJobseekerById(1)));
-        }
-        catch (JobSeekerNotFoundException e) {
+        } catch (JobSeekerNotFoundException e) {
             e.printStackTrace();
         }
         try {
             DatabaseInvoice.addInvoice(new EwalletPayment(2, myJob1, DatabaseJobseeker.getJobseekerById(2)));
-        }
-        catch (JobSeekerNotFoundException e) {
+        } catch (JobSeekerNotFoundException e) {
             e.printStackTrace();
         }
-        for (Invoice invoice: DatabaseInvoice.getInvoiceDatabase()){
-            new Thread(new FeeCalculator(invoice).start());
+        for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()) {
+            new Thread(new FeeCalculator(invoice)).start();
         }
     }
 }
