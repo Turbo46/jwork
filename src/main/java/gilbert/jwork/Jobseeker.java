@@ -96,6 +96,7 @@ public class Jobseeker
     {
          this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
     }
+
       @Override
     public String toString() {
         if (this.joinDate == null) {

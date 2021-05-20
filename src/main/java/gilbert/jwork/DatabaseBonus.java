@@ -16,16 +16,14 @@ public class DatabaseBonus
         return lastId;
     }
 
-    public static Bonus getBonusById(int id) throws BonusNotFoundException{
-        Bonus x = null;
-        try{for (Bonus bonus : BONUS_DATABASE) {
-            if (id == bonus.getId()) {
-                x = bonus;
+    public static Bonus getBonusByReferralCode(String referralCode){
+        Bonus temp = null;
+        for (Bonus bonus : BONUS_DATABASE) {
+            if (referralCode.equals(bonus.getReferralCode())) {
+                temp = bonus;
             }
-        }}
-        catch (Exception e){
-            throw new BonusNotFoundException(id);}
-        return x;
+        }
+        return temp;
     }
 
     public static boolean addBonus(Bonus bonus) throws ReferralCodeAlreadyExistsException
