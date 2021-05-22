@@ -10,6 +10,6 @@ public class OngoingInvoiceAlreadyExistsException extends Exception{
     @Override
     public String getMessage()
     {
-        return super.getMessage() + invoice_error.getJobs() + "already ordered by"+ invoice_error.getJobseeker().getName()+"\n";
+        return super.getMessage() + invoice_error.getJobs() + "already placed by"+ invoice_error.getJobseeker().getName()+"\n";
     }
 }
