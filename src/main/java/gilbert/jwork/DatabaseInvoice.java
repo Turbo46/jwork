@@ -2,8 +2,9 @@ package gilbert.jwork;
 import java.util.ArrayList;
 
 public class DatabaseInvoice {
+
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
-    private static int lastId;
+    private static int lastId = 0;
 
     public static ArrayList<Invoice> getInvoiceDatabase(){
         return INVOICE_DATABASE;
@@ -13,32 +14,35 @@ public class DatabaseInvoice {
         return lastId;
     }
 
-    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException{
-        Invoice x = null;
-        try{for (Invoice invoice : INVOICE_DATABASE) {
+    public static Invoice getInvoiceById(int id) throws InvoiceNotFoundException {
+        Invoice result = null;
+        for (Invoice invoice : INVOICE_DATABASE) {
             if (id == invoice.getId()) {
-                x = invoice;
-            }
-        }}
-        catch (Exception e){
-            throw new InvoiceNotFoundException(id);}
-        return x;
-    }
-
-    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerId){
-        ArrayList<Invoice> temp = new ArrayList<>();
-        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
-            if(INVOICE_DATABASE.get(i).getJobseeker().getId() == jobseekerId){
-                temp.add(INVOICE_DATABASE.get(i));
-                return temp;
+                result = invoice;
+            } else {
+                result = null;
             }
         }
-        return null;
+        if (result == null){
+            throw new InvoiceNotFoundException(id);
+        }
+
+        return result;
+    }
+
+    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerid){
+        ArrayList<Invoice> temp = new ArrayList<Invoice>();
+        for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
+            if (jobseekerid == INVOICE_DATABASE.get(i).getJobseeker().getId()) {
+                temp.add(INVOICE_DATABASE.get(i));
+            }
+        }
+        return temp;
     }
 
     public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{
-        for (Invoice inv : INVOICE_DATABASE) {
-            if (inv.getInvoiceStatus() == InvoiceStatus.OnGoing) {
+        for (Invoice invoices : INVOICE_DATABASE) {
+            if (invoices.getInvoiceStatus() == InvoiceStatus.OnGoing) {
                 throw new OngoingInvoiceAlreadyExistsException(invoice);
             }
         }
@@ -47,29 +51,32 @@ public class DatabaseInvoice {
         return true;
     }
 
-    public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus){
-        for (int i=0; i < INVOICE_DATABASE.size(); i++) {
-            if(INVOICE_DATABASE.get(i).getId() == id) {
-                INVOICE_DATABASE.get(i).setInvoiceStatus(invoiceStatus);
-                return true;
+    public static boolean changeInvoiceStatus(int id,InvoiceStatus invoiceStatus){
+        boolean tempBool = true;
+        for (Invoice invoice: INVOICE_DATABASE) {
+            if (id == invoice.getId()){
+                invoice.setInvoiceStatus(InvoiceStatus.OnGoing);
+                tempBool = true;
+            }
+            else{
+                tempBool = false;
             }
         }
-        return false;
+        return tempBool;
     }
 
     public static boolean removeInvoice(int id) throws InvoiceNotFoundException{
-        boolean status = false;
-        for (Invoice element : INVOICE_DATABASE) {
-            if (element.getId() == id) {
-                INVOICE_DATABASE.remove(element);
-                status = true;
+        boolean tempBool = false;
+        for (Invoice invoice: INVOICE_DATABASE) {
+            if (id == invoice.getId()){
+                INVOICE_DATABASE.remove(id);
+                tempBool = true;
                 break;
             }
         }
-        if (!status){
+        if (!tempBool) {
             throw new InvoiceNotFoundException(id);
         }
-
-        return status;
+        return tempBool;
     }
 }

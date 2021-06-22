@@ -9,34 +9,58 @@ import java.util.ArrayList;
 @RequestMapping("/job")
 @RestController
 public class JobController {
-    @RequestMapping(value = "", method = RequestMethod.GET)
-    public ArrayList<Job> getAllJob() {
-        return DatabaseJob.getJobDatabase();
-    }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Job getJobById(@PathVariable int id) throws JobNotFoundException {
-        Job job = DatabaseJob.getJobById(id);
+    @RequestMapping("")
+    public ArrayList<Job> getAllJob() {
+        ArrayList<Job> job = null;
+
+        job = DatabaseJob.getJobDatabase();
         return job;
     }
 
-    @RequestMapping(value = "/recruiter/{recruiterId}", method = RequestMethod.GET)
-    public ArrayList<Job> getJobByRecruiter (@PathVariable int recruiterId) throws JobNotFoundException {
-        return DatabaseJob.getJobByRecruiter(recruiterId);
+    @RequestMapping("/{id}")
+    public Job getJobById(@PathVariable int id) {
+        Job job = null;
+        try {
+            job = DatabaseJob.getJobById(id);
+        } catch (JobNotFoundException e) {
+            e.getMessage();
+            return null;
+        }
+        return job;
     }
 
-    @RequestMapping(value = "/category/{category}", method = RequestMethod.GET)
-    public ArrayList<Job> getJobByCategory (@PathVariable JobCategory category) throws JobNotFoundException {
-        return DatabaseJob.getJobByCategory(category);
+    @RequestMapping("/recruiter/{recruiterId}")
+    public ArrayList<Job> getJobByRecruiter(@PathVariable int recruiterId) {
+        ArrayList<Job> job = null;
+        job = DatabaseJob.getJobByRecruiter(recruiterId);
+
+        return job;
+    }
+
+    @RequestMapping("/category/{category}")
+    public ArrayList<Job> getJobByCategory(@PathVariable JobCategory category) {
+        ArrayList<Job> job = null;
+        job = DatabaseJob.getJobByCategory(category);
+        return job;
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public Job addJob(@RequestParam(value="name") String name,
-                        @RequestParam(value="recruiterID") int recruiterId,
-                        @RequestParam(value="fee") int fee,
-                        @RequestParam(value="category") JobCategory category) throws RecruiterNotFoundException {
-        Job job = new Job(DatabaseJob.getLastId()+1, name, DatabaseRecruiter.getRecruiterById(recruiterId), fee, category);
-        DatabaseJob.addJob(job);
-        return job;
+    public Job addJob(@RequestParam(value = "name") String name,
+                      @RequestParam(value = "fee") int fee,
+                      @RequestParam(value = "category") String category,
+                      @RequestParam(value = "recruiterId") int recruiterId) {
+        Job job = null;
+        try {
+            job = new Job(DatabaseJob.getLastId() + 1, name, DatabaseRecruiter.getRecruiterById(recruiterId), fee, JobCategory.valueOf(category));
+        } catch (RecruiterNotFoundException e) {
+            e.getMessage();
+        }
+        boolean status = DatabaseJob.addJob(job);
+        if (status == true) {
+            return job;
+        } else {
+            return null;
+        }
     }
 }

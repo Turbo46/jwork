@@ -10,12 +10,11 @@ import java.util.ArrayList;
 public class BonusController {
     @RequestMapping(value = "", method = RequestMethod.GET)
     public ArrayList<Bonus> getAllBonus() {
-        return DatabaseBonus.getBonusDatabase();
+        return (DatabaseBonus.getBonusDatabase());
     }
 
-    @RequestMapping(value = "/{referralCode}", method = RequestMethod.GET)
-    public Bonus getBonusByReferralCode(
-            @RequestParam(value = "referralCode") String referralCode) {
+    @RequestMapping(value = "/{referralCode}")
+    public Bonus getBonusByReferralCode(@PathVariable String referralCode){
         return (DatabaseBonus.getBonusByReferralCode(referralCode));
     }
 
